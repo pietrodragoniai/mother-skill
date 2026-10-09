@@ -5,6 +5,31 @@
 
 Non sai cos’è un repository? Non sai collegare una cartella a Claude Code? Oppure lavori già con Git, PR e CI/CD ma vuoi meno giri inutili?
 
+## 🚀 Install Mother Skill
+
+Already using Claude Code? No ZIP needed.
+
+Paste these commands into your Claude Code session, one at a time:
+
+**1. Add the marketplace**
+```text
+/plugin marketplace add pietrodragoniai/mother-skill
+```
+
+**2. Install Mother Skill**
+```text
+/plugin install mother-skill@mother-skill-marketplace
+```
+
+**3. Start Mother Skill**
+
+Restart Claude Code or reload your plugins, then type:
+```text
+/mother-skill:mother-skill
+```
+
+**Your mom, but for coding. She raised you to ship. 🇮🇹**
+
 **Mother Skill è la skill da installare per prima.** Ti accompagna dall’idea al primo prodotto funzionante, imparando quanto sai già e adattando il linguaggio. Non è un modello, un IDE o un servizio di hosting: è un workflow guidato per **Claude Code**.
 
 > Ti insegna a camminare fra terminale e GitHub. Ti fa rifare i compiti quando servono. Ma non ti fa girare a vuoto per tre giorni.  
