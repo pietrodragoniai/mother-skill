@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Mother Skill · Inizia qui</title>
+  <style>
+    :root { color-scheme:light; --ink:#173c40; --muted:#53696b; --paper:#fffdf9; --panel:#fff; --line:#dee7e3; --cream:#f7f2e9; --coral:#ed745f; --petrol:#173c40; --pale:#ecf3ef; --warning:#8a5327; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; }
+    a { color:#176d70; }
+    button { font:inherit; cursor:pointer; }
+    button:focus-visible, a:focus-visible { outline:3px solid #ed745f; outline-offset:3px; }
+    main { max-width:820px; margin:auto; padding:24px 18px 90px; }
+    .hero { background:var(--petrol); color:#fff; padding:36px 32px; border-radius:20px; margin-bottom:24px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:700; opacity:.8; }
+    h1 { font-size:clamp(29px,5vw,44px); line-height:1.12; margin:12px 0; letter-spacing:-.03em; }
+    h2 { font-size:23px; line-height:1.25; margin:0 0 12px; }
+    h3 { font-size:18px; margin:0 0 7px; }
+    p { margin:8px 0 12px; }
+    .subtitle { font-size:18px; max-width:600px; color:#e9efeb; }
+    .small { font-size:13px; color:var(--muted); }
+    .hero .small { color:#c5d5d0; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:24px; margin:18px 0; box-shadow:0 5px 14px rgba(9,36,37,.035); }
+    .notice { background:var(--pale); border-left:4px solid #377a71; padding:14px 17px; border-radius:9px; margin:18px 0; }
+    .warn { background:#fff4e8; border-left:4px solid #c17e37; }
+    .options { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .option { border:1px solid #cddbd5; background:white; border-radius:11px; padding:11px 15px; color:var(--ink); font-weight:650; }
+    .option[aria-pressed="true"] { background:var(--petrol); color:#fff; border-color:var(--petrol); }
+    .step { display:flex; gap:15px; align-items:flex-start; margin:18px 0; }
+    .stepnumber { flex:0 0 35px; height:35px; background:var(--cream); border-radius:10px; display:grid; place-items:center; font-weight:800; }
+    .step > div:last-child { flex:1; min-width:0; }
+    code { background:#eaf2ee; padding:2px 5px; border-radius:4px; word-break:break-word; }
+    pre { position:relative; white-space:pre-wrap; overflow-wrap:anywhere; background:#193b3f; color:#fff; border-radius:10px; padding:14px 80px 14px 15px; font-size:14px; margin:9px 0; }
+    pre code { padding:0; background:none; color:inherit; }
+    .copy { position:absolute; right:8px; top:8px; border:1px solid #719392; background:#2d5559; color:white; border-radius:7px; font-size:12px; padding:5px 9px; }
+    .cta { display:inline-block; background:var(--coral); color:#1a3031; font-weight:800; padding:12px 16px; text-decoration:none; border-radius:11px; margin-top:4px; }
+    ul { margin:8px 0 12px; padding-left:21px; }
+    li { margin:7px 0; }
+    details { border-top:1px solid var(--line); padding:12px 0; }
+    summary { cursor:pointer; font-weight:650; }
+    [hidden] { display:none !important; }
+    .footer { font-size:13px; color:var(--muted); margin-top:24px; }
+    @media(max-width:560px) { main { padding:12px 12px 60px; } .hero { padding:25px 20px; } .card { padding:19px; } .option { width:100%; text-align:left; } }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="eyebrow">Mother Skill · v1.0</div>
+    <h1>Hai un’idea?<br>Ci pensa mamma.</h1>
+    <p class="subtitle">Your mom, but for coding. Ti accompagno anche se non sai ancora aprire una cartella in Claude Code.</p>
+    <p class="small">Non ti preparo la merenda. Ti preparo la pull request. Nessun programma speciale: sei già nel browser. Funziona anche senza Internet, tranne i link alle guide ufficiali.</p>
+  </header>
+
+  <div class="notice"><strong>Prima di iniziare:</strong> estrai tutto lo ZIP in una cartella. Non aprire gli installer direttamente dall'anteprima dello ZIP. Questa pagina e gli installer devono rimanere nella stessa cartella estratta.</div>
+
+  <section class="card" aria-labelledby="choose-os">
+    <h2 id="choose-os">1. Che computer usi?</h2>
+    <div class="options" role="group" aria-label="Sistema operativo">
+      <button class="option" type="button" aria-pressed="true" data-os="mac">🍎 Mac</button>
+      <button class="option" type="button" aria-pressed="false" data-os="win">🪟 Windows</button>
+    </div>
+    <p class="small">Le istruzioni cambiano in base al sistema operativo. Questa scelta rimane soltanto in questa pagina.</p>
+  </section>
+
+  <section class="card" aria-labelledby="choose-state">
+    <h2 id="choose-state">2. Hai già Claude Code?</h2>
+    <div class="options" role="group" aria-label="Stato Claude Code">
+      <button class="option" type="button" aria-pressed="true" data-state="ready">Sì, funziona già</button>
+      <button class="option" type="button" aria-pressed="false" data-state="login">È installato, ma non so se ho fatto login</button>
+      <button class="option" type="button" aria-pressed="false" data-state="desktop">Uso solo Claude Desktop</button>
+      <button class="option" type="button" aria-pressed="false" data-state="new">No, parto da zero</button>
+      <button class="option" type="button" aria-pressed="false" data-state="unknown">Non ne ho idea</button>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="steps" id="steps">
+    <h2 id="steps">3. Segui il tuo percorso</h2>
+
+    <div data-show-state="ready" class="notice"><strong>Perfetto: non reinstallare Claude Code.</strong> Dobbiamo aggiungere soltanto la skill. Non cambieremo account, impostazioni o progetti esistenti.</div>
+    <div data-show-state="login" class="notice"><strong>Evitiamo reinstallazioni.</strong> Prima verifichiamo l'accesso; se necessario Claude mostrerà la procedura di login ufficiale.</div>
+    <div data-show-state="desktop" class="notice"><strong>Puoi usare Claude Desktop → Code.</strong> La normale chat Claude non equivale a una sessione Code che può lavorare sui file locali. Il riconoscimento delle skill in Desktop dipende dalla versione/configurazione.</div>
+    <div data-show-state="new" class="notice"><strong>Partiamo da zero.</strong> Prima installi Claude Code dall'origine ufficiale; poi aggiungi questa skill. Avrai bisogno di un account con accesso a Claude Code.</div>
+    <div data-show-state="unknown" class="notice"><strong>Nessun problema.</strong> Puoi controllare rapidamente se Claude Code è disponibile. Se usi soltanto Claude Desktop, l'assenza del comando nel terminale non significa che Desktop non funzioni.</div>
+
+    <div data-show-state="new unknown login">
+      <div class="step">
+        <div class="stepnumber">1</div>
+        <div>
+          <h3>Verifica o installa Claude Code</h3>
+          <p data-show-state="new">Apri la <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener noreferrer">guida ufficiale di Claude Code</a> e segui la procedura indicata per il tuo sistema operativo. Non installare da siti sconosciuti.</p>
+          <p data-show-state="unknown login">Se sai aprire il terminale, prova il comando qui sotto. Se Claude Code è già installato, non serve reinstallarlo.</p>
+          <div data-show-os="mac">
+            <p class="small">Mac: apri <strong>Terminale</strong> da Applicazioni → Utility.</p>
+          </div>
+          <div data-show-os="win">
+            <p class="small">Windows: apri <strong>PowerShell</strong> dal menu Start.</p>
+          </div>
+          <pre><code>claude --version
+claude auth status</code><button type="button" class="copy" data-copy="claude --version&#10;claude auth status">Copia</button></pre>
+          <p class="small">Se il primo comando non è riconosciuto, segui la guida ufficiale; se il login non è verificato, completa l'accesso nella procedura ufficiale. Non condividere password o chiavi API.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="stepnumber"><span data-show-state="new unknown login">2</span><span data-show-state="ready desktop">1</span></div>
+      <div>
+        <h3>Installa questa skill (non Claude Code)</h3>
+        <div data-show-os="mac"><p>Nella cartella estratta fai doppio clic su <strong><code>INSTALLA-MAC.command</code></strong>.</p></div>
+        <div data-show-os="win"><p>Nella cartella estratta fai doppio clic su <strong><code>INSTALLA-WINDOWS.cmd</code></strong>.</p></div>
+        <p>Questo passaggio copia soltanto Mother Skill. Se avevi una versione precedente della skill, l'installer crea una copia di sicurezza.</p>
+        <p class="small">Se il sistema blocca l'esecuzione o segnala un file non attendibile, non disabilitare le protezioni di sistema. Verifica la provenienza del pacchetto e consulta la guida ufficiale oppure chiedi supporto.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="stepnumber"><span data-show-state="new unknown login">3</span><span data-show-state="ready desktop">2</span></div>
+      <div>
+        <h3>Apri Claude nella cartella del tuo progetto</h3>
+        <div data-hide-state="desktop">
+          <div data-show-os="mac"><p>Fai doppio clic su <strong><code>AVVIA-MAC.command</code></strong>.</p></div>
+          <div data-show-os="win"><p>Fai doppio clic su <strong><code>AVVIA-WINDOWS.cmd</code></strong>.</p></div>
+          <p>Se non hai ancora una cartella di progetto, premi <strong>Invio</strong> quando viene richiesto il percorso: l'avviatore ne proporrà una dedicata. Se hai già un progetto, indica la sua cartella.</p>
+          <p data-show-state="ready" class="small">Se Claude Code è già aperto nella cartella corretta, puoi semplicemente avviare una nuova sessione dopo aver installato la skill.</p>
+        </div>
+        <div data-show-state="desktop">
+          <p>Apri l'app <strong>Claude Desktop → Code</strong>, crea una <strong>sessione locale</strong> e seleziona una cartella dedicata al progetto. Se la skill non compare tra quelle disponibili, utilizza il percorso con il terminale oppure consulta la documentazione ufficiale di Desktop Code.</p>
+          <p class="small">Non selezionare l'intera cartella Documenti, Download o una directory contenente dati privati.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="stepnumber"><span data-show-state="new unknown login">4</span><span data-show-state="ready desktop">3</span></div>
+      <div>
+        <h3>Scrivi il tuo primo messaggio</h3>
+        <p>Quando sei in Claude <strong>Code</strong> e la skill è disponibile, inserisci:</p>
+        <pre><code>/mother-skill Ho un'idea</code><button type="button" class="copy" data-copy="/mother-skill Ho un'idea">Copia</button></pre>
+        <p>Da qui Claude ti guiderà nel quiz iniziale, nella definizione dell'idea, nel piano e nello sviluppo. GitHub, commit, push e database verranno spiegati quando servono.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>4. Se qualcosa non funziona</h2>
+    <details><summary>Non so cos'è una cartella di progetto</summary><p>È una normale cartella sul computer in cui salverai i file del progetto. La skill lavora su quella cartella, senza dover aprire tutto il computer. L'avviatore ne propone una se non ne hai.</p></details>
+    <details><summary>Il mio computer non apre i file .md</summary><p>Non devi aprirli: <strong>questa pagina HTML è la guida per principianti</strong>. I file Markdown sono documentazione tecnica. Se vuoi leggerli comunque, puoi usare Blocco note su Windows, TextEdit su Mac oppure un editor di testo.</p></details>
+    <details><summary>Ho già Claude, perché dovrei installare qualcosa?</summary><p>Claude Code e Mother Skill sono cose diverse. Se Claude Code funziona, l'installer serve soltanto ad aggiungere questa skill. Non effettua logout o reinstallazioni.</p></details>
+    <details><summary>Claude non trova il comando /mother-skill</summary><p>Controlla di aver eseguito l'installer della skill e aperto una nuova sessione Code. La chat Claude ordinaria potrebbe non vedere la cartella locale. Se usi Desktop Code, le skill personali possono dipendere dal supporto della tua versione.</p></details>
+    <details><summary>Mac/Windows blocca l'installer</summary><p>Non disattivare controlli di sicurezza. Verifica che il pacchetto provenga dalla persona o repository attendibile. In alternativa l'installazione manuale consiste nel copiare la cartella <code>mother-skill</code> dentro <code>~/.claude/skills/</code> (Mac) o <code>%USERPROFILE%\.claude\skills\</code> (Windows), senza cancellare altre cartelle.</p></details>
+    <details><summary>Serve GitHub oppure un database subito?</summary><p>No. Per iniziare basta una cartella di progetto e Claude Code funzionante. La skill introdurrà GitHub, database, hosting e altri strumenti quando necessari, prima spiegando a cosa servono.</p></details>
+  </section>
+  <div class="notice warn"><strong>Test beta:</strong> usa un progetto nuovo e dati non sensibili. Non autorizzare pagamenti, deploy in produzione o collegamenti a servizi personali senza comprenderne gli effetti. Se ti blocchi, annota il passaggio e invia uno screenshot dopo aver oscurato dati personali e credenziali.</div>
+  <footer class="footer">Mother Skill · Guida per principianti · v1.0. Documentazione tecnica: README.md, START-QUI.md e mother-skill/SKILL.md. Questa guida non esegue comandi da sola.</footer>
+</main>
+<script>
+(function(){
+  'use strict';
+  const values={os:'mac',state:'ready'};
+  function update(){
+    document.querySelectorAll('[data-show-os]').forEach(function(el){el.hidden=el.dataset.showOs!==values.os;});
+    document.querySelectorAll('[data-show-state]').forEach(function(el){el.hidden=!el.dataset.showState.split(/\s+/).includes(values.state);});
+    document.querySelectorAll('[data-hide-state]').forEach(function(el){el.hidden=el.dataset.hideState.split(/\s+/).includes(values.state);});
+    document.querySelectorAll('[data-os]').forEach(function(el){el.setAttribute('aria-pressed',String(el.dataset.os===values.os));});
+    document.querySelectorAll('[data-state]').forEach(function(el){el.setAttribute('aria-pressed',String(el.dataset.state===values.state));});
+  }
+  document.querySelectorAll('[data-os]').forEach(function(el){el.addEventListener('click',function(){values.os=el.dataset.os;update();});});
+  document.querySelectorAll('[data-state]').forEach(function(el){el.addEventListener('click',function(){values.state=el.dataset.state;update();document.getElementById('steps').scrollIntoView({block:'start',behavior:'smooth'});});});
+  document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',async function(){
+    const content=el.dataset.copy, old=el.textContent;
+    try {if(!navigator.clipboard||!navigator.clipboard.writeText)throw Error('not available');await navigator.clipboard.writeText(content);el.textContent='Copiato!';}
+    catch(e){let ta=document.createElement('textarea');ta.value=content;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');document.body.removeChild(ta);el.textContent=ok?'Copiato!':'Seleziona il comando';}
+    setTimeout(function(){el.textContent=old;},2000);
+  });});
+  update();
+})();
+</script>
+</body>
+</html>

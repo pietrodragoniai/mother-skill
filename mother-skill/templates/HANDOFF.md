@@ -1,0 +1,11 @@
+# Handoff operativo
+- Data / sessione:
+- Fase / task:
+- Branch / commit reale (se disponibile):
+- Stato effettivo:
+- Modifiche rilevanti:
+- Test eseguiti ed esiti:
+- Decisioni e link:
+- Problemi ancora aperti:
+- Prima azione alla ripresa:
+- Serve approvazione per:
